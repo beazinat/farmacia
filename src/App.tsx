@@ -5,7 +5,7 @@ import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/home/Home';
-import ListaCategorias from './components/categorias/listaCategorias/ListaCategorias';
+import ListaCategorias from './components/categorias/listarCategorias/ListarCategorias';
 import ListaProdutos from './components/produtos/listaProdutos/ListaProdutos'
 
 
