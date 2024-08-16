@@ -15,17 +15,15 @@ function Home() {
                         <div className="flex justify-around gap-4">
 
                             <button onClick={() => window.location.href = '/categorias'} className='rounded bg-gray-200 text-blue-600 py-2 px-4'>Ver produtos por categoria</button>
-                        </div>
+                        </div></div>
+                    <img src={homeLogo} alt="" className='w-2/3' />
                     </div>
 
-                    <div className="flex justify-center ">
-                        <img src={homeLogo} alt="" className='w-2/3' />
+                
 
-                    </div>
-                </div>
             </div>
-
         </>
+
     );
 }
 

@@ -5,8 +5,8 @@ import Navbar from './components/navbar/Navbar';
 import Footer from './components/footer/Footer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Home from './pages/home/Home';
-import ListaCategorias from './components/categorias/listarCategorias/ListarCategorias';
-import ListaProdutos from './components/produtos/listaProdutos/ListaProdutos'
+import ListarCategorias from './components/categorias/listarCategorias/ListarCategorias';
+import ListarProdutos from './components/produtos/listarProdutos/ListarProdutos'
 
 
 function App() {
@@ -18,8 +18,8 @@ function App() {
             <Routes>
             <Route path="/" element={<Home />} />
               <Route path="/home" element={<Home />} />
-              <Route path="/categorias" element={<ListaCategorias />} />
-              <Route path="/produtos" element={<ListaProdutos />} />
+              <Route path="/categorias" element={<ListarCategorias />} />
+              <Route path="/produtos" element={<ListarProdutos />} />
             </Routes>
           </div>
           <Footer />
