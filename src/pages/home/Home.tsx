@@ -14,7 +14,7 @@ function Home() {
 
                         <div className="flex justify-around gap-4">
 
-                            <button className='rounded bg-gray-200 text-blue-600 py-2 px-4'>Ver todos os produtos</button>
+                            <button onClick={() => window.location.href = '/categorias'} className='rounded bg-gray-200 text-blue-600 py-2 px-4'>Ver produtos por categoria</button>
                         </div>
                     </div>
 
