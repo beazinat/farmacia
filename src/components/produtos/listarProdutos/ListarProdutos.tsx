@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from 'react';
 import { DNA } from 'react-loader-spinner';
+import { useNavigate } from 'react-router-dom';
 import Produto from '../../../models/Produto';
-import { buscar, deletar } from '../../../services/Service';
+import { buscar } from '../../../services/Service';
 import CardProduto from '../cardProduto/CardProduto';
 
 export default function ListarProdutos() {
     const [produtos, setProdutos] = useState<Produto[]>([]);
+    let navigate = useNavigate();
 
     async function buscarProdutos() {
         try {
@@ -19,16 +21,6 @@ export default function ListarProdutos() {
         buscarProdutos();
     }, []);
 
-    async function handleDeleteProduto(id: number) {
-        try {
-            await deletar(`/produtos/${id}`);
-            alert('Produto deletado com sucesso');
-            buscarProdutos();
-        } catch (error) {
-            alert('Erro ao deletar produto');
-        }
-    }
-
     return (
         <>
             {produtos.length === 0 && (
@@ -38,6 +30,8 @@ export default function ListarProdutos() {
                         height="200"
                         width="200"
                         ariaLabel="dna-loading"
+                        wrapperStyle={{}}
+                        wrapperClass="dna-wrapper"
                     />
                 </div>
             )}
@@ -45,11 +39,7 @@ export default function ListarProdutos() {
                 <div className="container flex flex-col">
                     <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                         {produtos.map((produto) => (
-                            <CardProduto
-                                key={produto.id}
-                                produto={produto}
-                                onDelete={handleDeleteProduto}
-                            />
+                            <CardProduto key={produto.id} produto={produto} />
                         ))}
                     </div>
                 </div>

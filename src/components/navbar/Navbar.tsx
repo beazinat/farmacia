@@ -15,6 +15,8 @@ function Navbar() {
                     <Link to='/' className='hover:text-purple-500 hover:font-bold'>Home</Link>
                     <Link to='/produtos' className='hover:text-purple-500 hover:font-bold'>Todos os Produtos</Link>
                     <Link to='/categorias' className='hover:text-purple-500 hover:font-bold'>Categorias de Produtos</Link>
+                    <Link to='/criarcategoria' className='hover:text-purple-500 hover:font-bold'>Cadastrar Categorias</Link>
+                    <Link to='/criarproduto' className='hover:text-purple-500 hover:font-bold'>Cadastrar Produtos</Link>
                     </div>
                 </div>
             </div>

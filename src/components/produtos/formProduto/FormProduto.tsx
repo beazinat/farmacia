@@ -38,17 +38,24 @@ export default function FormProduto() {
     async function gerarNovoProduto(e: ChangeEvent<HTMLFormElement>) {
         e.preventDefault();
 
-        try {
-            if (produto.id !== 0) {
-                await atualizar('/produtos', produto, setProduto);
+        if (id !== undefined) {
+            try {
+                await atualizar(`/produtos`, produto, setProduto);
+
                 alert('Produto atualizado com sucesso');
-            } else {
-                await cadastrar('/produtos', produto, setProduto);
-                alert('Produto cadastrado com sucesso');
+                retornar();
+            } catch (error) {
+                alert('Erro ao atualizar o produto');
             }
-            retornar();
-        } catch (error) {
-            alert('Erro ao salvar o produto');
+        } else {
+            try {
+                await cadastrar(`/produtos`, produto, setProduto);
+
+                alert('Produto cadastrado com sucesso');
+                retornar();
+            } catch (error) {
+                alert('Erro ao cadastrar o produto');
+            }
         }
     }
 
